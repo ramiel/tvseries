@@ -1,0 +1,42 @@
+templates:
+  series_general:
+    transmission:
+      host: 127.0.0.1
+      port: 9091
+      username: fabrizio
+      password: ramiel
+    exists_series: '/media/5381b885-61ca-44fd-943b-af33cd9e95e2/Video/SerieTv/{{series_name}}'
+    series:
+      - White Collar:
+          quality: <=720p
+      - Sherlock
+      - Elementary
+      - Supernatural:
+          quality: 720p
+      - Suits
+      - House of cards
+      - Grimm
+      - Revolution
+      - Castle
+
+tasks:
+  tntvillage task:
+    rss: 
+      url: http://www.tntvillage.scambioetico.org/rss.php?c=29
+      other_fields: [author]
+    template: series_general
+
+  ezsupernatural task:
+    rss:
+      url: http://ezrss.it/search/?mode=simple&show_name=Supernatural&mode=rss
+    template: series_general
+
+schedules:
+  - tasks: '*'
+    interval:
+      days: 1
+      at_time: '00:01'
+  - tasks: '*'
+    interval:
+      days: 1
+      at_time: '13:01'
