@@ -18,11 +18,14 @@ templates:
       - Grimm
       - Revolution
       - Castle
+      - Doctor Who
+      - How I met your mother
+      - The Walking Dead
 
 tasks:
   tntvillage task:
     rss: 
-      url: http://www.tntvillage.scambioetico.org/rss.php?c=29
+      url: http://www.tntvillage.scambioetico.org/rss.php?c=29&p=20
       other_fields: [author]
     template: series_general
 
