@@ -37,9 +37,4 @@ tasks:
 schedules:
   - tasks: '*'
     interval:
-      days: 1
-      at_time: '00:01'
-  - tasks: '*'
-    interval:
-      days: 1
-      at_time: '13:01'
+      hours: 1
