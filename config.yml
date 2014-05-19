@@ -1,3 +1,13 @@
+email:
+  from: tvseries@ramielcreations.com
+  to: fabrizio.ruggeri@gmail.com
+  smtp_host: srv-hp11.netsons.net
+  smtp_port: 465
+  smtp_username: tvseries@ramielcreations.com
+  smtp_password: "tvs3r13s#"
+  smtp_tls: yes
+  template: html
+
 templates:
   series_general:
     transmission:
