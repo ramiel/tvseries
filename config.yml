@@ -7,20 +7,27 @@ templates:
       password: ramiel
     exists_series: '/media/5381b885-61ca-44fd-943b-af33cd9e95e2/Video/SerieTv/{{series_name}}'
     series:
-      - White Collar:
-          quality: <=720p
-      - Sherlock
-      - Elementary
       - Supernatural:
           quality: 720p
-      - Suits
+      - Sherlock:
+          quality: 720p
+      - White Collar:
+          quality: <=720p
+      - Grimm:
+          quality: <=720p
+      - Castle:
+          quality: <=720p
+      - How I met your mother:
+          quality: <=720p
+      - Elementary:
+          quality: <=720p
+      - Suits:
+          quality: <=720p
       - House of cards
-      - Grimm
       - Revolution
-      - Castle
       - Doctor Who
-      - How I met your mother
       - The Walking Dead
+      - Resurrection
 
 tasks:
   tntvillage task:
@@ -28,6 +35,9 @@ tasks:
       url: http://www.tntvillage.scambioetico.org/rss.php?c=29&p=20
       other_fields: [author]
     template: series_general
+    #regexp:
+    #  reject:
+    #    - (s|S)ub\s+(i|I)ta
 
   ezsupernatural task:
     rss:
