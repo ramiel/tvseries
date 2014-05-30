@@ -25,12 +25,10 @@ templates:
           quality: <=720p
       - Grimm:
           quality: <=720p
-      - Castle:
-          quality: <=720p
+      - Castle
       - How I met your mother:
           quality: <=720p
-      - Elementary:
-          quality: <=720p
+      - Elementary
       - Suits:
           quality: <=720p
       - House of cards
