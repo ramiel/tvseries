@@ -1,12 +1,12 @@
-email:
-  from: tvseries@ramielcreations.com
-  to: fabrizio.ruggeri@gmail.com
-  smtp_host: srv-hp11.netsons.net
-  smtp_port: 465
-  smtp_username: tvseries@ramielcreations.com
-  smtp_password: tvs3r13s#
-  smtp_tls: yes
-  template: default
+#email:
+#  from: tvseries@ramielcreations.com
+#  to: fabrizio.ruggeri@gmail.com
+#  smtp_host: srv-hp11.netsons.net
+#  smtp_port: 465
+#  smtp_username: tvseries@ramielcreations.com
+#  smtp_password: tvs3r13s|
+#  smtp_tls: no
+#  template: default
 
 templates:
   series_general:
@@ -25,12 +25,12 @@ templates:
           quality: <=720p
       - Grimm:
           quality: <=720p
-      - Castle
       - How I met your mother:
           quality: <=720p
-      - Elementary
       - Suits:
           quality: <=720p
+      - Castle
+      - Elementary
       - House of cards
       - Revolution
       - Doctor Who
@@ -50,7 +50,7 @@ tasks:
       smtp_port: 465
       smtp_username: tvseries@ramielcreations.com
       smtp_password: tvs3r13s|
-      smtp_tls: yes
+      smtp_tls: no
       template: html
     #regexp:
     #  reject:
@@ -67,7 +67,7 @@ tasks:
       smtp_port: 465
       smtp_username: tvseries@ramielcreations.com
       smtp_password: tvs3r13s|
-      smtp_tls: yes
+      smtp_tls: no
       template: html
 
 schedules:
