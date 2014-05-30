@@ -27,8 +27,7 @@ templates:
           quality: <=720p
       - How I met your mother:
           quality: <=720p
-      - Suits:
-          quality: <=720p
+      - Suits
       - Castle
       - Elementary
       - House of cards
