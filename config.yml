@@ -1,21 +1,21 @@
 email:
-  from: tvseries@ramielcreations.com
-  to: fabrizio.ruggeri@gmail.com
-  smtp_host: srv-hp11.netsons.net
-  smtp_port: 465
-  smtp_username: tvseries@ramielcreations.com
-  smtp_password: tvs3r13s|
-  smtp_tls: no
-  template: html
+  from: %config.email.from%
+  to: %config.email.to%
+  smtp_host: %config.email.smtp_host%
+  smtp_port: %config.email.smtp_port%
+  smtp_username: %config.email.smtp_username%
+  smtp_password: %config.email.smtp_password%
+  smtp_tls: %config.email.smtp_tls%
+  template: %config.email.template%
 
 templates:
   series_general:
     transmission:
-      host: 192.168.1.9
+      host: %transmission_host%
       port: 9091
       username: fabrizio
       password: ramiel
-    exists_series: '/media/5381b885-61ca-44fd-943b-af33cd9e95e2/Video/SerieTv/{{series_name}}'
+    exists_series: '%existing_series_root_folder%{{series_name}}'
     series:
       - Supernatural:
           quality: 720p
@@ -35,7 +35,6 @@ templates:
       - Doctor Who
       - The Walking Dead
       - Resurrection
-      - Grimm
 
 tasks:
   tntvillage task:

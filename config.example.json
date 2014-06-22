@@ -1,0 +1,18 @@
+{
+  "email": {
+    "from": "from@email.address",
+    "to": "to@email.address",
+    "smtp_host": "smtp.host",
+    "smtp_port": 465,
+    "smtp_username": "username",
+    "smtp_password": "password",
+    "smtp_tls": "yes|no",
+    "template": "html"
+  },
+  "sftp" : {
+    "host" : "host",
+    "port" : 22,
+    "username" : "username",
+    "private_key_path" : "/path/to/id_rsa"
+  }
+}
