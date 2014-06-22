@@ -73,6 +73,14 @@ module.exports = function(grunt) {
       lint: {
         command: '/usr/local/bin/flexget check',
         options: ssh_options
+      },
+      deploy : {
+        command: 'sudo /etc/init.d/flexget stop && sudo /etc/init.d/flexget start',
+        options: ssh_options
+      },
+      pro_execute :{
+        command: '/usr/local/bin/flexget execute',
+        options: ssh_options
       }
     }
   });
