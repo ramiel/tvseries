@@ -1,17 +1,17 @@
-#email:
-#  from: tvseries@ramielcreations.com
-#  to: fabrizio.ruggeri@gmail.com
-#  smtp_host: srv-hp11.netsons.net
-#  smtp_port: 465
-#  smtp_username: tvseries@ramielcreations.com
-#  smtp_password: tvs3r13s|
-#  smtp_tls: no
-#  template: default
+email:
+  from: tvseries@ramielcreations.com
+  to: fabrizio.ruggeri@gmail.com
+  smtp_host: srv-hp11.netsons.net
+  smtp_port: 465
+  smtp_username: tvseries@ramielcreations.com
+  smtp_password: tvs3r13s|
+  smtp_tls: no
+  template: html
 
 templates:
   series_general:
     transmission:
-      host: 127.0.0.1
+      host: 192.168.1.9
       port: 9091
       username: fabrizio
       password: ramiel
@@ -35,6 +35,7 @@ templates:
       - Doctor Who
       - The Walking Dead
       - Resurrection
+      - Grimm
 
 tasks:
   tntvillage task:
@@ -42,32 +43,23 @@ tasks:
       url: http://www.tntvillage.scambioetico.org/rss.php?c=29&p=20
       other_fields: [author]
     template: series_general
-    email:
-      from: tvseries@ramielcreations.com
-      to: fabrizio.ruggeri@gmail.com
-      smtp_host: srv-hp11.netsons.net
-      smtp_port: 465
-      smtp_username: tvseries@ramielcreations.com
-      smtp_password: tvs3r13s|
-      smtp_tls: no
-      template: html
     #regexp:
     #  reject:
     #    - (s|S)ub\s+(i|I)ta
 
-  ezsupernatural task:
-    rss:
-      url: http://ezrss.it/search/?mode=simple&show_name=Supernatural&mode=rss
-    template: series_general
-    email:
-      from: tvseries@ramielcreations.com
-      to: fabrizio.ruggeri@gmail.com
-      smtp_host: srv-hp11.netsons.net
-      smtp_port: 465
-      smtp_username: tvseries@ramielcreations.com
-      smtp_password: tvs3r13s|
-      smtp_tls: no
-      template: html
+  #ezsupernatural task:
+  #  rss:
+  #    url: http://ezrss.it/search/?mode=simple&show_name=Supernatural&mode=rss
+  #  template: series_general
+  #  email:
+  #    from: tvseries@ramielcreations.com
+  #    to: fabrizio.ruggeri@gmail.com
+  #    smtp_host: srv-hp11.netsons.net
+  #    smtp_port: 465
+  #    smtp_username: tvseries@ramielcreations.com
+  #    smtp_password: tvs3r13s|
+  #    smtp_tls: no
+  #    template: html
 
 schedules:
   - tasks: '*'
