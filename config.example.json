@@ -14,5 +14,27 @@
     "port" : 22,
     "username" : "username",
     "private_key_path" : "/path/to/id_rsa"
+  },
+  "transmission" : {
+    "production" : {
+      "host" : "trasmission_pro_host"
+    },
+    "development" : {
+      "host" : "trasmission_dev_host"
+    }
+  },
+  "flexget" : {
+    "production" : {
+      "user" : "username of user which run flexget. Can omit. Default to config.sftp.username",
+      "config_path" : "production config path witouth config filename",
+      "config_file_name" : "configuration_filename Can omit. default: config.yml",
+      "existing_series_root_folder" : "existing_serier_path"
+    },
+    "development" : {
+      "user" : "username of user which run flexget. Can omit. Default to config.sftp.username",
+      "config_path" : "dev_config_path",
+      "config_file_name" : "configuration_filename Can omit. default: config.yml",
+      "existing_series_root_folder" : "existing_serier_path"
+    }
   }
 }
