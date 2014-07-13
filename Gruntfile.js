@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
 
-  var config =grunt.file.readJSON('config.json');
+  var path = require('path'),
+      util = require('util'),
+      config =grunt.file.readJSON('config.json');
 
   var mail_replacements = Object.keys(config.email)
                         .map(function(key){
@@ -9,8 +11,13 @@ module.exports = function(grunt) {
                                     to: config.email[key]
                                   };
                                 });
+  var complete_config_path = {
+    production : path.join( config.flexget.production.config_path, (config.flexget.production.config_file_name || 'config.yml') ),
+    development : path.join( config.flexget.development.config_path, (config.flexget.development.config_file_name || 'config.yml') )
+  };
+
   var sftp_options = {
-    path: '/home/pi/.flexget',
+    path: path.normalize(config.flexget.production.config_path),
     host: config.sftp.host,
     username: config.sftp.username,
     privateKey: grunt.file.read(config.sftp.private_key_path),
@@ -18,7 +25,7 @@ module.exports = function(grunt) {
     srcBasePath: "build/production/"
   },
   ssh_options = {
-    path: '/home/pi/',
+    path: util.format('/home/%s/',config.flexget.production.user || config.sftp.username),
     host: config.sftp.host,
     username: config.sftp.username,
     privateKey: grunt.file.read(config.sftp.private_key_path)
@@ -34,11 +41,11 @@ module.exports = function(grunt) {
         replacements: [
           {
             from: '%transmission_host%',
-            to: '127.0.0.1'
+            to: config.transmission.production.host
           },
           {
             from: '%existing_series_root_folder%',
-            to: '/media/5381b885-61ca-44fd-943b-af33cd9e95e2/Video/SerieTv/'
+            to: config.flexget.production.existing_series_root_folder
           }
         ].concat(mail_replacements)
       },
@@ -48,11 +55,11 @@ module.exports = function(grunt) {
         replacements: [
           {
             from: '%transmission_host%',
-            to: '192.168.1.9'
+            to: config.transmission.development.host
           },
           {
             from: '%existing_series_root_folder%',
-            to: '/home/fabrizio/'
+            to: config.flexget.development.existing_series_root_folder
           }
         ].concat(mail_replacements)
       }
@@ -67,11 +74,19 @@ module.exports = function(grunt) {
     },
     sshexec: {
       test: {
-        command: '/usr/local/bin/flexget --test execute',
+        command: util.format('/usr/local/bin/flexget -c %s --test execute', complete_config_path.production),
         options: ssh_options
       },
       lint: {
-        command: '/usr/local/bin/flexget check',
+        command: util.format('/usr/local/bin/flexget -c %s check',complete_config_path.production),
+        options: ssh_options
+      },
+      deploy : {
+        command: 'sudo /etc/init.d/flexget stop && sudo /etc/init.d/flexget start',
+        options: ssh_options
+      },
+      pro_execute :{
+        command: util.format('/usr/local/bin/flexget -c %s execute',complete_config_path.production),
         options: ssh_options
       }
     }
@@ -88,4 +103,8 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['sshexec:test']);
   grunt.registerTask('lint', ['sshexec:lint']);
   grunt.registerTask('pro_test', ['lint','test']);
+  /**
+   * Task di produzione. Dalla generazione fino alla pubblicazione e test
+   */
+  grunt.registerTask('production', ['default','pro_test']);
 };
