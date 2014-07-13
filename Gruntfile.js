@@ -96,4 +96,8 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['sshexec:test']);
   grunt.registerTask('lint', ['sshexec:lint']);
   grunt.registerTask('pro_test', ['lint','test']);
+  /**
+   * Task di produzione. Dalla generazione fino alla pubblicazione e test
+   */
+  grunt.registerTask('production',['default','pro_test']);
 };
