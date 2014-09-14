@@ -32,7 +32,7 @@
     },
     "development" : {
       "user" : "username of user which run flexget. Can omit. Default to config.sftp.username",
-      "config_path" : "dev_config_path",
+      "config_path" : "dev_config_path Should omit, default is built configuration in ./build/development",
       "config_file_name" : "configuration_filename Can omit. default: config.yml",
       "existing_series_root_folder" : "existing_serier_path"
     }

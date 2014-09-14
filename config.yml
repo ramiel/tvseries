@@ -9,16 +9,21 @@ email:
   template: %config.email.template%
 
 templates:
-  series_general:
+  global:
     transmission:
       host: %transmission_host%
       port: 9091
       username: fabrizio
       password: ramiel
     exists_series: '%existing_series_root_folder%{{series_name}}'
+  series_eztv:
     series:
       - Supernatural:
           quality: 720p
+      - Doctor Who:
+          quality: 720p
+  series_general:
+    series:
       - Sherlock:
           quality: 720p
       - White Collar:
@@ -32,7 +37,6 @@ templates:
       - Elementary
       - House of cards
       - Revolution
-      - Doctor Who
       - The Walking Dead
       - Resurrection
 
@@ -46,19 +50,24 @@ tasks:
     #  reject:
     #    - (s|S)ub\s+(i|I)ta
 
-  #ezsupernatural task:
-  #  rss:
-  #    url: http://ezrss.it/search/?mode=simple&show_name=Supernatural&mode=rss
-  #  template: series_general
-  #  email:
-  #    from: tvseries@ramielcreations.com
-  #    to: fabrizio.ruggeri@gmail.com
-  #    smtp_host: srv-hp11.netsons.net
-  #    smtp_port: 465
-  #    smtp_username: tvseries@ramielcreations.com
-  #    smtp_password: tvs3r13s|
-  #    smtp_tls: no
-  #    template: html
+  ezdrwho task:
+    rss:
+      url: http://ezrss.it/search/index.php?show_name=Doctor+Who+%282005%29&mode=rss
+    template: series_eztv
+
+  ezsupernatural task:
+    rss:
+      url: http://ezrss.it/search/?mode=simple&show_name=Supernatural&mode=rss
+    template: series_eztv
+   # email:
+   #   from: tvseries@ramielcreations.com
+   #   to: fabrizio.ruggeri@gmail.com
+   #   smtp_host: srv-hp11.netsons.net
+   #   smtp_port: 465
+   #   smtp_username: tvseries@ramielcreations.com
+   #   smtp_password: tvs3r13s|
+   #   smtp_tls: no
+   #   template: html
 
 schedules:
   - tasks: '*'

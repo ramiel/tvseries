@@ -12,8 +12,8 @@ module.exports = function(grunt) {
                                   };
                                 });
   var complete_config_path = {
-    production : path.join( config.flexget.production.config_path, (config.flexget.production.config_file_name || 'config.yml') ),
-    development : path.join( config.flexget.development.config_path, (config.flexget.development.config_file_name || 'config.yml') )
+    production : path.join( config.flexget.production.config_path, (config.flexget.production.config_file_name || 'config.yml') ), 
+    development : path.join( (config.flexget.development.config_path || __dirname() + '/build/development/'), (config.flexget.development.config_file_name || 'config.yml') )
   };
 
   var sftp_options = {
@@ -89,20 +89,32 @@ module.exports = function(grunt) {
         command: util.format('/usr/local/bin/flexget -c %s execute',complete_config_path.production),
         options: ssh_options
       }
+    },
+    exec: {
+      local_test: {
+        cmd: util.format('/usr/local/bin/flexget -c %s --test execute', complete_config_path.development),
+      },
+      local_lint: {
+        command: util.format('/usr/local/bin/flexget -c %s check',complete_config_path.development),
+        options: ssh_options
+      },
     }
   });
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-ssh');
+  grunt.loadNpmTasks('grunt-exec');
 
   // Default task(s).
-  grunt.registerTask('default', ['dev','publish']);
+  grunt.registerTask('default', ['dev']);
   grunt.registerTask('dev', ['replace']);
-  grunt.registerTask('publish', ['sftp']);
+  grunt.registerTask('publish', ['dev','sftp']);
   grunt.registerTask('test', ['sshexec:test']);
+  grunt.registerTask('local_test', ['dev','exec:local_test']);
+  grunt.registerTask('local_lint', ['dev','exec:local_lint']);
   grunt.registerTask('lint', ['sshexec:lint']);
-  grunt.registerTask('pro_test', ['lint','test']);
+  grunt.registerTask('pro_test', ['publish','lint','test']);
   /**
    * Task di produzione. Dalla generazione fino alla pubblicazione e test
    */
