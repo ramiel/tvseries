@@ -1,8 +1,8 @@
 #TvSeries
 
 My personal flexget generator, tester and publisher.
-Provide gunt tasks to manage publishing on a remote host on which runs flexget. 
-This tasks is not suitable for all configurations and environment because it's modeled on my needs. You can freely modify it based on yours.
+Provides grunt tasks to manage publishing on a remote host on which runs flexget. 
+This tasks is not suitable for all configurations and environments because it's modeled on my needs. You can freely modify it based on yours.
 
 In my configuration I have a develop environment and a production environment, each with its configuration but with the same flexget behaviour.
 
