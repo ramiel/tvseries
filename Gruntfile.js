@@ -11,6 +11,15 @@ module.exports = function(grunt) {
                                     to: config.email[key]
                                   };
                                 });
+  var trasmission_replacements = function(env){
+    return Object.keys(config.transmission[env])
+                        .map(function(key){
+                                  return {
+                                    from: '%transmission_'+key+'%',
+                                    to: config.transmission[env][key]
+                                  };
+                                });
+  };
   var complete_config_path = {
     production : path.join( config.flexget.production.config_path, (config.flexget.production.config_file_name || 'config.yml') ), 
     development : path.join( (config.flexget.development.config_path || __dirname() + '/build/development/'), (config.flexget.development.config_file_name || 'config.yml') )
@@ -38,30 +47,22 @@ module.exports = function(grunt) {
       production: {
         src: ['config.yml'],
         dest: 'build/production/config.yml',
-        replacements: [
-          {
-            from: '%transmission_host%',
-            to: config.transmission.production.host
-          },
-          {
-            from: '%existing_series_root_folder%',
-            to: config.flexget.production.existing_series_root_folder
-          }
-        ].concat(mail_replacements)
+        replacements:  [
+            {
+                from: '%existing_series_root_folder%',
+                to: config.flexget.production.existing_series_root_folder
+            }
+        ].concat(trasmission_replacements('production').concat(mail_replacements))
       },
       develop : {
         src: ['config.yml'],
         dest: 'build/develop/config.yml',
         replacements: [
-          {
-            from: '%transmission_host%',
-            to: config.transmission.development.host
-          },
-          {
-            from: '%existing_series_root_folder%',
-            to: config.flexget.development.existing_series_root_folder
-          }
-        ].concat(mail_replacements)
+            {
+                from: '%existing_series_root_folder%',
+                to: config.flexget.development.existing_series_root_folder
+            }
+        ].concat(trasmission_replacements('development').concat(mail_replacements))
       }
     },
     sftp: {

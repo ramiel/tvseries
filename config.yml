@@ -12,9 +12,9 @@ templates:
   global:
     transmission:
       host: %transmission_host%
-      port: 9091
-      username: fabrizio
-      password: ramiel
+      port: %transmission_port%
+      username: %transmission_username%
+      password: %transmission_password%
     exists_series: '%existing_series_root_folder%{{series_name}}'
   series_eztv:
     series:
