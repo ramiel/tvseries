@@ -4,3 +4,4 @@ flexget.log
 node_modules
 config.json
 build/
+.sublime-grunt.cache
