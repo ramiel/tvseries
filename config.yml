@@ -34,6 +34,8 @@ templates:
           quality: <=720p
       - True detective:
           quality: =1080p
+      - Supernatural:
+          quality: 720p
       - Suits
       - Castle
       - House of cards
