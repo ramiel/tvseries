@@ -17,10 +17,16 @@
   },
   "transmission" : {
     "production" : {
-      "host" : "trasmission_pro_host"
+      "host" : "trasmission_pro_host",
+      "port" : 9091,
+      "username" : "username",
+      "password" : "password"
     },
     "development" : {
-      "host" : "trasmission_dev_host"
+      "host" : "trasmission_dev_host",
+      "port" : 9091,
+      "username" : "username",
+      "password" : "password"
     }
   },
   "flexget" : {
