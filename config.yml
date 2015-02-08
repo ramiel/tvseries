@@ -34,7 +34,9 @@ templates:
           quality: <=720p
       - True detective:
           quality: =1080p
-      - Supernatural:
+      #- Supernatural:
+      #    quality: 720p
+      - Doctor Who:
           quality: 720p
       - Suits
       - Castle
@@ -58,12 +60,14 @@ tasks:
 
   ezdrwho task:
     rss:
-      url: http://ezrss.it/search/index.php?show_name=Doctor+Who+%282005%29&mode=rss
+      url: http://showrss.info/feeds/103.rss
+      #url: http://ezrss.it/search/index.php?show_name=Doctor+Who+%282005%29&mode=rss
     template: series_eztv
 
   ezsupernatural task:
     rss:
-      url: http://ezrss.it/search/?mode=simple&show_name=Supernatural&mode=rss
+      url: http://showrss.info/feeds/62.rss
+      #url: http://ezrss.it/search/?mode=simple&show_name=Supernatural&mode=rss
     template: series_eztv
    # email:
    #   from: tvseries@ramielcreations.com
