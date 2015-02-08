@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     path: path.normalize(config.flexget.production.config_path),
     host: config.sftp.host,
     username: config.sftp.username,
-    privateKey: grunt.file.read(config.sftp.private_key_path),
+    password : config.sftp.password,
     showProgress: true,
     srcBasePath: "build/production/"
   },
@@ -37,8 +37,13 @@ module.exports = function(grunt) {
     path: util.format('/home/%s/',config.flexget.production.user || config.sftp.username),
     host: config.sftp.host,
     username: config.sftp.username,
-    privateKey: grunt.file.read(config.sftp.private_key_path)
+    password : config.sftp.password
   };
+
+  if(config.sftp.private_key_path){
+    ssh_options.privateKey = grunt.file.read(config.sftp.private_key_path);
+    sftp_options.privateKey = grunt.file.read(config.sftp.private_key_path);
+  }
 
   // Project configuration.
   grunt.initConfig({
