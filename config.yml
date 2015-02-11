@@ -36,8 +36,7 @@ templates:
           quality: =1080p
       #- Supernatural:
       #    quality: 720p
-      - Doctor Who:
-          quality: 720p
+      - Doctor Who
       - Suits
       - Castle
       - House of cards
@@ -47,6 +46,7 @@ templates:
       - Hart of dixie
       - Fargo
       - The Newsroom
+      - Le regole del delitto perfetto
 
 tasks:
   tntvillage task:
