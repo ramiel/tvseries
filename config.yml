@@ -46,7 +46,8 @@ templates:
       - Hart of dixie
       - Fargo
       - The Newsroom
-      - Le regole del delitto perfetto
+      - Le regole del delitto perfetto:
+          quality: hdtv <720p
 
 tasks:
   tntvillage task:
