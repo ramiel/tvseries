@@ -18,6 +18,7 @@ templates:
     exists_series: '%existing_series_root_folder%{{series_name}}'
   series_eztv:
     series:
+      - Mr robot
       - Supernatural:
           quality: 720p
       - Doctor Who:
@@ -73,6 +74,13 @@ tasks:
       url: http://showrss.info/feeds/62.rss
       #url: http://ezrss.it/search/?mode=simple&show_name=Supernatural&mode=rss
     template: series_eztv
+
+  ezmrrobot task:
+    rss:
+      url: http://showrss.info/feeds/1089.rss
+      #url: http://ezrss.it/search/?mode=simple&show_name=Supernatural&mode=rss
+    template: series_eztv
+
    # email:
    #   from: tvseries@ramielcreations.com
    #   to: fabrizio.ruggeri@gmail.com
