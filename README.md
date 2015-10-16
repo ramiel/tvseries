@@ -11,6 +11,8 @@ Copy `config.example.json` as `config.json` and fill it with your configuration 
 
 ### Available tasks
 
+This script comes with pre-configured Grunt tasks:
+
 - `dev` : Replace configuration value and produce two configuration in build folder
 - `publish`: Publish production configuration on pro environment (using sftp)
 - `lint`: Check your configuration on production environment (flexget check)
