@@ -1,4 +1,4 @@
-#TvSeries
+# TvSeries
 
 My personal flexget generator, tester and publisher.
 Provides grunt tasks to manage publishing on a remote host on which runs flexget. 
@@ -6,10 +6,10 @@ This tasks is not suitable for all configurations and environments because it's 
 
 In my configuration I have a develop environment and a production environment, each with its configuration but with the same flexget behaviour.
 
-###Prepare it
+### Prepare it
 Copy `config.example.json` as `config.json` and fill it with your configuration values
 
-###Available tasks
+### Available tasks
 
 - `dev` : Replace configuration value and produce two configuration in build folder
 - `publish`: Publish production configuration on pro environment (using sftp)
