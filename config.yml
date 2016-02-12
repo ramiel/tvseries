@@ -45,15 +45,18 @@ templates:
       - The Walking Dead
       - Resurrection
       - Hart of dixie
-      - Fargo
+      # - Fargo
       - The Newsroom
       - Wayward Pines
       - Zoo
+      - The strain
+      - Sense 8
+      - Show me a hero
+      - The Shannara Chronicles
       - Orange is the new black:
           quality: hdtv <720p
       - Le regole del delitto perfetto:
           quality: hdtv <720p
-
 tasks:
   tntvillage task:
     rss: 
