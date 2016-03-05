@@ -55,8 +55,8 @@ templates:
       - The Shannara Chronicles
       - Orange is the new black:
           quality: hdtv <720p
-      - Le regole del delitto perfetto:
-          quality: hdtv <720p
+      - Le regole del delitto perfetto
+      - Gravity Falls
 tasks:
   tntvillage task:
     rss: 
