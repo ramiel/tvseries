@@ -23,6 +23,9 @@ templates:
           quality: 720p
       - Doctor Who:
           quality: 720p
+  series_toon:
+    series:
+      - Gravity Falls
   series_general:
     series:
       - Sherlock:
@@ -53,10 +56,11 @@ templates:
       - Sense 8
       - Show me a hero
       - The Shannara Chronicles
+      - 11.22.63
       - Orange is the new black:
           quality: hdtv <720p
       - Le regole del delitto perfetto
-      - Gravity Falls
+
 tasks:
   tntvillage task:
     rss: 
@@ -66,6 +70,11 @@ tasks:
     #regexp:
     #  reject:
     #    - (s|S)ub\s+(i|I)ta
+
+  toon task:
+    rss: 
+      url: http://www.tntvillage.scambioetico.org/rss.php?c=8&p=20
+    template: series_toon
 
   ezdrwho task:
     rss:
