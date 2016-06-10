@@ -60,6 +60,7 @@ templates:
       - Orange is the new black:
           quality: hdtv <720p
       - Le regole del delitto perfetto
+      - Outlander
 
 tasks:
   tntvillage task:
