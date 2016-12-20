@@ -1,12 +1,17 @@
-email:
-  from: %config.email.from%
-  to: %config.email.to%
-  smtp_host: %config.email.smtp_host%
-  smtp_port: %config.email.smtp_port%
-  smtp_username: %config.email.smtp_username%
-  smtp_password: %config.email.smtp_password%
-  smtp_tls: %config.email.smtp_tls%
-  template: %config.email.template%
+# email:
+#   from: %config.email.from%
+#   to: %config.email.to%
+#   smtp_host: %config.email.smtp_host%
+#   smtp_port: %config.email.smtp_port%
+#   smtp_username: %config.email.smtp_username%
+#   smtp_password: %config.email.smtp_password%
+#   smtp_tls: %config.email.smtp_tls%
+#   template: %config.email.template%
+
+web_server:
+  bind: 0.0.0.0
+  port: 5951
+  web_ui: yes
 
 templates:
   global:
@@ -94,16 +99,6 @@ tasks:
       url: http://showrss.info/feeds/1089.rss
       #url: http://ezrss.it/search/?mode=simple&show_name=Supernatural&mode=rss
     template: series_eztv
-
-   # email:
-   #   from: tvseries@ramielcreations.com
-   #   to: fabrizio.ruggeri@gmail.com
-   #   smtp_host: srv-hp11.netsons.net
-   #   smtp_port: 465
-   #   smtp_username: tvseries@ramielcreations.com
-   #   smtp_password: tvs3r13s|
-   #   smtp_tls: no
-   #   template: html
 
 schedules:
   - tasks: '*'
