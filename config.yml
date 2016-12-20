@@ -21,6 +21,7 @@ templates:
       username: %transmission_username%
       password: %transmission_password%
     exists_series: '%existing_series_root_folder%{{series_name}}'
+
   series_eztv:
     series:
       - Mr robot
@@ -28,9 +29,16 @@ templates:
           quality: 720p
       - Doctor Who:
           quality: 720p
+
   series_toon:
     series:
       - Gravity Falls
+
+  series_pir8:
+    series:
+      - The strain
+      - The Walking Dead
+
   series_general:
     series:
       - Sherlock:
@@ -43,33 +51,47 @@ templates:
           quality: <=720p
       - True detective:
           quality: =1080p
-      #- Supernatural:
-      #    quality: 720p
       - Doctor Who
       - Suits
       - Castle
       - House of cards
       - Revolution
-      - The Walking Dead
+      # - The Walking Dead:
+      #     quality: <=720p
       - Resurrection
       - Hart of dixie
-      # - Fargo
+      - Fargo
       - The Newsroom
       - Wayward Pines
       - Zoo
-      - The strain
+      # - The strain:
+      #     quality: <=720p
       - Sense 8
       - Show me a hero
       - The Shannara Chronicles
-      - 11.22.63
       - Orange is the new black:
           quality: hdtv <720p
-      - Le regole del delitto perfetto
-      - Outlander
+      - Le regole del delitto perfetto:
+          quality: <=720p
+      - Outlander:
+          quality: <=720p
+      - Westworld:
+          quality: <=720p
+      - Timeless:
+          quality: <=720p
+      - 11.22.63
 
 tasks:
+  pir8 task:
+    rss:
+      url: http://www.tntvillage.scambioetico.org/rss.php?c=29&p=20
+    regexp:
+      reject_excluding:
+        - (p|P)ir8
+    template: series_pir8
+
   tntvillage task:
-    rss: 
+    rss:
       url: http://www.tntvillage.scambioetico.org/rss.php?c=29&p=20
       other_fields: [author]
     template: series_general
@@ -78,7 +100,7 @@ tasks:
     #    - (s|S)ub\s+(i|I)ta
 
   toon task:
-    rss: 
+    rss:
       url: http://www.tntvillage.scambioetico.org/rss.php?c=8&p=20
     template: series_toon
 
