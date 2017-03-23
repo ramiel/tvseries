@@ -24,7 +24,6 @@ templates:
 
   series_eztv:
     series:
-      - Mr robot
       - Supernatural:
           quality: 720p
       - Doctor Who:
@@ -106,22 +105,12 @@ tasks:
       url: http://www.tntvillage.scambioetico.org/rss.php?c=8&p=20
     template: series_toon
 
-  ezdrwho task:
+  # Show registered on http://showrss.info
+  # Doctor Who 2005
+  # Supernatural
+  showrss task:
     rss:
-      url: http://showrss.info/feeds/103.rss
-      #url: http://ezrss.it/search/index.php?show_name=Doctor+Who+%282005%29&mode=rss
-    template: series_eztv
-
-  ezsupernatural task:
-    rss:
-      url: http://showrss.info/feeds/62.rss
-      #url: http://ezrss.it/search/?mode=simple&show_name=Supernatural&mode=rss
-    template: series_eztv
-
-  ezmrrobot task:
-    rss:
-      url: http://showrss.info/feeds/1089.rss
-      #url: http://ezrss.it/search/?mode=simple&show_name=Supernatural&mode=rss
+      url: http://showrss.info/user/131356.rss?magnets=true&namespaces=true&name=null&quality=null&re=null
     template: series_eztv
 
 schedules:
