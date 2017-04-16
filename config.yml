@@ -24,9 +24,8 @@ templates:
 
   series_eztv:
     series:
-      - Supernatural:
-          quality: 720p
-      - Doctor Who:
+      - Supernatural
+      - Doctor Who 2005:
           quality: 720p
 
   series_toon:
