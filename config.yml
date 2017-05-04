@@ -39,6 +39,7 @@ templates:
       - The man in the high castle
       - Una Serie Di Sfortunati Eventi
       - Mr. Robot
+      - American Gods
 
   series_general:
     series:
@@ -81,6 +82,7 @@ templates:
       - Timeless:
           quality: <=720p
       - 11.22.63
+      - Taboo
 
 tasks:
   pir8 task:
