@@ -40,6 +40,8 @@ templates:
       - Una Serie Di Sfortunati Eventi
       - Mr. Robot
       - American Gods
+      - Fargo
+      - Sense 8
 
   series_general:
     series:
@@ -62,13 +64,11 @@ templates:
       #     quality: <=720p
       - Resurrection
       - Hart of dixie
-      - Fargo
       - The Newsroom
       - Wayward Pines
       - Zoo
       # - The strain:
       #     quality: <=720p
-      - Sense 8
       - Show me a hero
       - The Shannara Chronicles
       - Orange is the new black:
@@ -82,7 +82,8 @@ templates:
       - Timeless:
           quality: <=720p
       - 11.22.63
-      - Taboo
+      - Taboo:
+          quality: <720p
 
 tasks:
   pir8 task:
