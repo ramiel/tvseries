@@ -84,6 +84,8 @@ templates:
       - 11.22.63
       - Taboo:
           quality: <720p
+      - Broadchurch:
+          quality: <720p
 
 tasks:
   pir8 task:
