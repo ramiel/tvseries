@@ -49,16 +49,16 @@ templates:
           quality: 720p
       - White Collar:
           quality: <=720p
-      - Grimm:
-          quality: <=720p
+      # - Grimm:
+      #     quality: <=720p
       - How I met your mother:
           quality: <=720p
       - True detective:
           quality: =1080p
-      - Doctor Who
       - Suits
       - Castle
-      - House of cards
+      - House of cards:
+          quality: <=720p
       - Revolution
       # - The Walking Dead:
       #     quality: <=720p
