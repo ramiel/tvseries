@@ -24,7 +24,8 @@ templates:
 
   series_eztv:
     series:
-      - Supernatural
+      - Supernatural:
+          quality: <=720p
       - Doctor Who 2005:
           quality: 720p
 
