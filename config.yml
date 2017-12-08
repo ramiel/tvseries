@@ -56,7 +56,7 @@ templates:
       # - Grimm:
       #     quality: <=720p
       - How I met your mother:
-          quality: <=720p
+          quality: <720p
       - True detective:
           quality: =1080p
       - Suits
