@@ -42,8 +42,8 @@ templates:
       - The strain
       - The Walking Dead
       - The man in the high castle
-      - Una Serie Di Sfortunati Eventi
-      - Mr. Robot
+      # - Una Serie Di Sfortunati Eventi
+      # - Mr. Robot
       - American Gods
       - Fargo
       - Sense 8
@@ -73,7 +73,7 @@ templates:
       #     quality: <=720p
       - Resurrection
       - Hart of dixie
-      - The Newsroom
+      # - The Newsroom
       - Wayward Pines
       - Zoo
       # - The strain:
@@ -91,8 +91,8 @@ templates:
       - Timeless:
           quality: <=720p
       - 11.22.63
-      - Taboo:
-          quality: <720p
+      # - Taboo:
+      #   quality: <720p
       - Broadchurch:
           quality: <720p
 
